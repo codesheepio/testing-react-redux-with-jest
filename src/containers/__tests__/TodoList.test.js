@@ -8,12 +8,8 @@ describe('TodoList Container', () => {
         { id: 2, text: 'Drink coffee', complete: true },
       ],
     }
-    const expectedProps = {
-      todos: [
-        { id: 1, text: 'Feed cat', complete: false },
-        { id: 2, text: 'Drink coffee', complete: true },
-      ],
-    }
-    expect(mapStateToProps(state)).toEqual(expectedProps)
+
+    expect(mapStateToProps(state))
+      .toEqual({ todos: state.todos })
   })
 })
