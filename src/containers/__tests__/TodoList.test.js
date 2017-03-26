@@ -7,9 +7,10 @@ import TodoList from '../TodoList'
 describe('TodoList Container', () => {
   const createStore = configureMockStore()
   let component
+  let state
 
   beforeEach(() => {
-    const state = {
+    state = {
       todos: [
         { id: 1, text: 'Feed cat', complete: false },
         { id: 2, text: 'Drink coffee', complete: true },
@@ -24,9 +25,6 @@ describe('TodoList Container', () => {
   })
 
   it('receives todos props from state', () => {
-    expect(component.prop('todos')).toEqual([
-     { id: 1, text: 'Feed cat', complete: false },
-     { id: 2, text: 'Drink coffee', complete: true },
-    ])
+    expect(component.prop('todos')).toEqual(state.todos)
   })
 })
