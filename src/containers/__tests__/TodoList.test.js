@@ -2,8 +2,7 @@ import React from 'react'
 import configureMockStore from 'redux-mock-store'
 import { Provider } from 'react-redux'
 import { mount } from 'enzyme'
-import TodoListContainer from '../TodoList'
-import TodoList from '../../components/TodoList'
+import TodoList from '../TodoList'
 
 describe('TodoList Container', () => {
   const createStore = configureMockStore()
@@ -19,9 +18,9 @@ describe('TodoList Container', () => {
     const store = createStore(state)
     component = mount(
       <Provider store={store}>
-        <TodoListContainer />
+        <TodoList />
       </Provider>
-    ).find(TodoListContainer).find(TodoList)
+    ).find('TodoList')
   })
 
   it('receives todos props from state', () => {
